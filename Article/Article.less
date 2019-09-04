@@ -9,9 +9,11 @@
   background-color: white;
   position: relative;
   height: 50px;
-  overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
-
+  overflow-y: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   h2 {
     font-size: 28px;
     padding: 0;
@@ -29,20 +31,21 @@
     right: 10px;
   }
 
-  .expandButton {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    font-size: 12px;
-    color: grey;
-    cursor: pointer;
-    transform: translate(-50%);
-    background-color: salmon;
-    width: 45px;
-    height: 45px;
+  .article-bar {
+    position: relative;
+    .expandButton {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 12px;
+      color: grey;
+      cursor: pointer;
+      transform: translate(-50%);
+    }
   }
 }
 
 .article-open {
   height: 400px;
+  overflow-y: scroll;
 }
