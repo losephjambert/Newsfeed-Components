@@ -135,6 +135,13 @@ const createArticle = (title, date, firstP, secondP, thirdP) => {
   article.appendChild(p3);
   article.appendChild(expandButton);
 
+  // add content
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  p1.textContent = firstP;
+  p2.textContent = secondP;
+  p3.textContent = thirdP;
+
   return article;
 };
 
@@ -143,5 +150,4 @@ const articles = data.map(article =>
 );
 
 console.log(articles);
-
 articlesContainer.append(...articles);
