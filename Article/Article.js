@@ -142,6 +142,14 @@ const createArticle = (title, date, firstP, secondP, thirdP) => {
   p2.textContent = secondP;
   p3.textContent = thirdP;
 
+  // handle click event
+  const handleClick = (e, targetEl, classToggle) => {
+    console.log('click', e.target);
+    targetEl.classList.toggle(classToggle);
+  };
+
+  expandButton.addEventListener('click', e => handleClick(e, article, 'article-open'));
+
   return article;
 };
 
