@@ -115,9 +115,33 @@ const data = [
 
 */
 
+const articlesContainer = document.querySelector('.articles');
+
 const createArticle = (title, date, firstP, secondP, thirdP) => {
   // create elements
   const article = createElement('div', ['article']);
-  console.log(article);
+  const articleTitle = createElement('h2');
+  const articleDate = createElement('p', ['date']);
+  const p1 = createElement('p');
+  const p2 = createElement('p');
+  const p3 = createElement('p');
+  const expandButton = createElement('span', ['expandButton']);
+
+  // create structure
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+  article.appendChild(expandButton);
+
+  return article;
 };
-createArticle();
+
+const articles = data.map(article =>
+  createArticle(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph)
+);
+
+console.log(articles);
+
+articlesContainer.append(...articles);
