@@ -185,5 +185,4 @@ const articles = data.map(article =>
   createArticle(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph)
 );
 
-console.log(articles);
 articlesContainer.append(...articles);
